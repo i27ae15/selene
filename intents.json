@@ -61,6 +61,16 @@
     {"tag": "Soup",
     "patterns": ["Soup", "I want the soup", "I'd like to have the soup", "Soup", "Soup, please"],
     "responses": ["You have order Soud, It'll be ready in 15 minutes, thank you for your order"]
+    },
+    {"tag": "Wikipedia",
+    "patterns": ["I would like to know something", "I want to ask a question", "May I ask a question?", 
+    "can you answer me something", "I got a question", "I want to know something", "I want to know", "I want to know something", 
+    "I want to know something about", "I want to know about", "I want to know about", "I got a question for you",
+    "I'd like to ask you something", "Can I ask you something", "I have a question", "I have a question for you", 
+    "question", "I wanna ask i question", "do you mind if I ask you something", "I need to ask you a question",
+    "I want to ask you a question", "I want to know about something", "I'd like to know about a topic", "I want to ask about a topic",
+    "Can I ask about a topic?", "May I ask for a topic?"],
+    "responses": ["Go ahead, ask me a about a topic you'd like to know about it, e.i: if you want to know about python you can write something like this: Python (programming language)"]
     }
 ]
 }

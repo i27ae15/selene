@@ -10,9 +10,23 @@ from colorama import Fore, Style, Back
 import random
 import pickle
 
+import wikipediaapi
+wiki = wikipediaapi.Wikipedia('en')
+
+
 with open("intents.json") as file:
     data = json.load(file)
 
+
+def call_wikipedia(query):
+    
+    page = wiki.page(query)
+    
+    if not page.exists():
+        return "Sorry, I couldn't find any results for that."
+
+    return page.summary
+    
 
 def chat():
     # load trained model
@@ -41,8 +55,16 @@ def chat():
 
         for i in data['intents']:
             if i['tag'] == tag:
-                
+                                
                 print(Fore.GREEN + "Selene:" + Style.RESET_ALL , np.random.choice(i['responses']))
+                
+                if tag == 'Wikipedia':
+                    inp = input("ask your question to Selene: ")
+                    response = call_wikipedia(inp.lower())
+
+                    print(Fore.GREEN + "Selene:" + Style.RESET_ALL , response)
+
+                
 
         # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
 
